@@ -24,7 +24,7 @@ def load_data():
     
     # Clean and process distribution data
     df_dist['DATE'] = pd.to_datetime(df_dist['DATE'])
-    print(df_dist.columns)
+    st.write(df_dist.columns)
     df_dist['CITY'] = df_dist['CITY'].str.title()
     df_dist.sort_values(by='DATE', ascending=True, inplace=True)
     
