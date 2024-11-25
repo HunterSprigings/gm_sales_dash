@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit_authenticator as stauth
 import bcrypt
-sns.set_style("whitegrid")
+sns.set_style("darkgrid")
 sns.color_palette("Set2")
 from matplotlib.ticker import FormatStrFormatter
 import matplotlib.gridspec as gridspec
