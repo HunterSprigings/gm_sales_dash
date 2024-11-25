@@ -11,6 +11,16 @@ import matplotlib.gridspec as gridspec
 from matplotlib.dates import DateFormatter
 from datetime import datetime,timedelta
 
+
+PASSWORD = 'hello'
+
+password = st.text_input('Password:',type='password')
+if password == PASSWORD:
+    st.success('Access Granted!')
+    st.write('Welcome to the App')
+else:
+    st.error('ACCESS denied.')
+
 dist_path = r'bc_customer_distribution.csv'
 inv_path = r'bc_age_of_inventory.csv'
 ven_path = r'bc_vendor_purchase_order.csv'
