@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit_authenticator as stauth
+import bcrypt
 sns.set_style("whitegrid")
 sns.color_palette("Set2")
 from matplotlib.ticker import FormatStrFormatter
@@ -13,16 +15,13 @@ from datetime import datetime,timedelta
 from psw import hashed_password
 
 
-PASSWORD = 'hello'
+password = st.text_input('Password:', type='password')
 
-password = st.text_input('Password:',type='password')
-
-if stauth.Hasher([password]).generate()[0] != hashed_password:
-    st.error('ACCESS denied.')
-else:
-    
+if not bcrypt.checkpw(password.encode(), hashed_password.encode()):
     st.success('Access Granted!')
     st.write('Welcome to the App')
+else:
+    st.error('ACCESS Denied.')
 
     dist_path = r'bc_customer_distribution.csv'
     inv_path = r'bc_age_of_inventory.csv'

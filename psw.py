@@ -1,6 +1,7 @@
-import streamlit as st
-import streamlit_authenticator as stauth
+import bcrypt
 
-# Pre-hash the valid password (this is a one-time operation)
-valid_password = "hello"
-hashed_password = stauth.Hasher([valid_password]).generate()[0]
+# Define plain text passwords
+passwords = ["hello"]
+
+# Convert plain text passwords to hashed passwords
+hashed_password = bcrypt.hashpw(passwords[0].encode(), bcrypt.gensalt()).decode()
