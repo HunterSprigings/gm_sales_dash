@@ -18,10 +18,10 @@ from psw import hashed_password
 password = st.text_input('Password:', type='password')
 
 if not bcrypt.checkpw(password.encode(), hashed_password.encode()):
-    st.success('Access Granted!')
-    st.write('Welcome to the App')
+    st.success('Access Denied.')
+    st.write('Please enter the correct password.')
 else:
-    st.error('ACCESS Denied.')
+    st.error('ACCESS GRANTED!')
 
     dist_path = r'bc_customer_distribution.csv'
     inv_path = r'bc_age_of_inventory.csv'
@@ -36,7 +36,6 @@ else:
         
         # Clean and process distribution data
         df_dist['DATE'] = pd.to_datetime(df_dist['DATE'])
-        st.write(df_dist.columns)
         df_dist['CITY'] = df_dist['CITY'].str.title()
         df_dist.sort_values(by='DATE', ascending=True, inplace=True)
         
