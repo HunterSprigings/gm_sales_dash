@@ -11,9 +11,9 @@ import matplotlib.gridspec as gridspec
 from matplotlib.dates import DateFormatter
 from datetime import datetime,timedelta
 
-dist_path = r'/Users/huntersprigings/Desktop/GM/BC Weekly Reporting/BC Data - bc_customer_distribution.csv'
-inv_path = r'/Users/huntersprigings/Desktop/GM/BC Weekly Reporting/BC Data - bc_age_of_inventory.csv'
-ven_path = r'/Users/huntersprigings/Desktop/GM/BC Weekly Reporting/BC Data - bc_vendor_purchase_order.csv'
+dist_path = r'bc_vendor_purchase_order.csv'
+inv_path = r'bc_age_of_inventory.csv'
+ven_path = r'bc_vendor_purchase_order.csv'
 
 # Data Loading and Cleaning
 @st.cache_data
