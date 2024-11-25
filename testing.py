@@ -10,12 +10,14 @@ from matplotlib.ticker import FormatStrFormatter
 import matplotlib.gridspec as gridspec
 from matplotlib.dates import DateFormatter
 from datetime import datetime,timedelta
+from psw import hashed_password
 
 
 PASSWORD = 'hello'
 
 password = st.text_input('Password:',type='password')
-if password != PASSWORD:
+
+if stauth.Hasher([password]).generate()[0] != hashed_password:
     st.error('ACCESS denied.')
 else:
     
