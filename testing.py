@@ -15,7 +15,7 @@ from datetime import datetime,timedelta
 PASSWORD = 'hello'
 
 password = st.text_input('Password:',type='password')
-if password == PASSWORD:
+if password != PASSWORD:
     st.error('ACCESS denied.')
 else:
     
